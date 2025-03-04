@@ -6,7 +6,7 @@ if($con){
 }else{
     echo "Connection failed!";
     die("Connection failed".mysqli_connect_error());
-      v  
+      
 
    
 }
