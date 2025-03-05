@@ -46,3 +46,25 @@
     </form>
 </body>
 </html>
+
+<?php
+    if(isset($_POST['sub'])){
+        $book_index=$_POST['book-index'];
+        $book_title=$_POST['book-title'];
+        $version=$_POST['version'];
+        $author=$_POST['author'];
+        $availability=$_POST['availability'];
+        $book_type=$_POST['book-type'];
+        echo $book_index;
+        echo $book_title;
+        echo $version;
+        echo $author;
+        foreach ($availability as $available) {
+            $all_availability=$all_availability.""<div class="1available"></div>
+            echo $all_availability;
+            
+        }
+        echo $book_type;   
+    } 
+
+?>
