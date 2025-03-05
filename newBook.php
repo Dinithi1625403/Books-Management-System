@@ -38,7 +38,7 @@
                     <td><input type="radio" value="None ICT"  name="book-type"/>None ICT</td>
                 </tr> 
                 <tr>
-                    <td colspan="2"><input type="submit" value="submit" name="sub"</td>
+                    <td colspan="2"><input type="submit" value="submit" name="sub"/></td>
                 </tr>  
             </table>
         </fieldset>
@@ -49,22 +49,38 @@
 
 <?php
     if(isset($_POST['sub'])){
-        $book_index=$_POST['book-index'];
-        $book_title=$_POST['book-title'];
-        $version=$_POST['version'];
-        $author=$_POST['author'];
-        $availability=$_POST['availability'];
-        $book_type=$_POST['book-type'];
+        include "connection.php";
+        if (!isset($con) || !$con) {
+            die("Database connection not established! Check connection.php.");
+        }
+        $book_index = mysqli_real_escape_string($con, $_POST['book-index']);
+        $book_title = mysqli_real_escape_string($con, $_POST['book-title']);
+        $version = mysqli_real_escape_string($con, $_POST['version']);
+        $author = mysqli_real_escape_string($con, $_POST['author']);
+        $book_type = mysqli_real_escape_string($con, $_POST['book-type']);
+    
         echo $book_index;
         echo $book_title;
         echo $version;
         echo $author;
-        foreach ($availability as $available) {
-            $all_availability=$all_availability.""<div class="1available"></div>
-            echo $all_availability;
-            
+        if (isset($_POST['availability'])) {
+            $availability = implode(", ", $_POST['availability']); // Convert array to a string
+        } else {
+            $availability = "None"; // Default value if no checkbox is selected
         }
-        echo $book_type;   
+        echo $availability;
+        echo $book_type; 
+        
+        
+        $sql_insert="INSERT INTO book  (`book_index`,`book_title`,`version`,`author`,`availability`,`book_type`)
+                     VALUES('$book_index','$book_title','$version','$author','$availability','$book_type')";
+        if($result=mysqli_query($con,$sql_insert)){
+            echo "Data successfully submited";
+        }
+        else{
+            echo "Sorry. Data not submitted: " . mysqli_error($con);
+          
+        }
     } 
 
 ?>
