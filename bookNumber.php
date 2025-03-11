@@ -16,7 +16,7 @@
                 <td>Book Number:</td>
                 <td><input type="number" maxlength="4" name="book_index"/></td>
                 <td><input type="submit" value="submit" name="sub"/></td>
-                <a href="">Back to List</a>
+                <a href="management.php">Back to List</a>
             </tr>
             
               
