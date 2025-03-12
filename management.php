@@ -14,8 +14,8 @@
                     <td><input type="text" size="30" name="keyword" /></td>
                     <td><select name="search_type">
                         <option value="book_title">Book Title</option>
-                        <option value="book_author">Author</option>
-                        <option value="book_publisher">Availability</option>
+                        <option value="author">Author</option>
+                        <option value="availability">Availability</option>
                     </select>
                     <input type="submit" value="Search" name="search" />
                     <a href="bookNumber.php">Add New</a>
@@ -35,11 +35,17 @@
 
         echo $keyword."".$search_type;
         include "connection.php";
-        $sql_select="SELECT * FROM book";
-        $result=mysqli_query($con,$sql_select);
+        if($keyword="")
+            $sql_select="SELECT * FROM book";
+        else{
+            $sql_select="SELECT*FROM book WHERE $serch_type LIKE '%$keyword%' ";
+            $result=mysqli_query($con,$sql_select);
+        }
+            
+        
         ?>
         
-        <table>
+        <table border="1">
             <caption>Book Details</caption>
         <tr><th>Book Number</th><th>Title</th><th>Author</th></tr>
         <?php
