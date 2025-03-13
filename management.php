@@ -56,9 +56,28 @@
             echo "Version:".$row['version'];
             echo "Author:".$row['author'];
             echo "<br/>";
+            ?>
+            <td><a href="management.php?book_index_delete=<?php echo $book_index;?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
+            <?php
+
         }
         ?>
         </table>
         <?php
+    }
+    elseif(isset($_POST['book_index_delete'])==true) && (isset($_GET['book_index_delete'])<>null)
+    {
+        $book_index=$_GET['book_index_delete'];
+        echo $book_index;
+        include "connectiom.php";
+        $sql_delete="DELETE FROM book WHERE book_index='$book_index'";
+        $result=mysqli_query($con,&sql_delete);
+        if($result){
+            echo "The book data deleted...";
+        
+        }
+        else{
+            echo "Data is not deleted...".mysqli_error($con)
+        }
     }
 ?>
