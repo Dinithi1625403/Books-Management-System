@@ -57,7 +57,8 @@
             echo "Author:".$row['author'];
             echo "<br/>";
             ?>
-            <td><a href="management.php?book_index_delete=<?php echo $book_index;?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
+            <td><td><a href="management.php?book_index_edit=<?php echo $book_index;?>" >Edit</a></td></tr>
+                <a href="management.php?book_index_delete=<?php echo $book_index;?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
             <?php
 
         }
@@ -80,4 +81,8 @@
             echo "Data is not deleted...".mysqli_error($con)
         }
     }
+    elseif(isset($_POST['book_index_edit'])==true) && (isset($_GET['book_index_edit'])<>null)
+    {   
+        $book_index=$_GET['book_index_edit'];
+        echo "you can edit";}
 ?>
