@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET['book_index'])){
+    $book_index=$_GET['book_index'];
+    
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
