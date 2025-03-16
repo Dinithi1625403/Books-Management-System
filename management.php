@@ -35,10 +35,10 @@
 
         echo $keyword."".$search_type;
         include "connection.php";
-        if($keyword="")
+        if($keyword=="")
             $sql_select="SELECT * FROM book";
         else{
-            $sql_select="SELECT*FROM book WHERE $serch_type LIKE '%$keyword%' ";
+            $sql_select="SELECT*FROM book WHERE $search_type LIKE '%$keyword%' ";
             $result=mysqli_query($con,$sql_select);
         }
             
@@ -49,40 +49,51 @@
             <caption>Book Details</caption>
         <tr><th>Book Number</th><th>Title</th><th>Author</th></tr>
         <?php
-        while($row=mysqli_fetch_assoc($result)){
-            echo "<tr><td>".$row['book_index']."</td><td>".$row['book_title']."</td><td>".$row['author']."</td></tr>";
-            echo "Book Number: ".$row['book_index'];
-            echo "Book Title:".$row['book_title'];
-            echo "Version:".$row['version'];
-            echo "Author:".$row['author'];
-            echo "<br/>";
+        if (isset($result) && $result) {
+            while($row=mysqli_fetch_assoc($result)){
+            echo "<tr><td>".$row['book_index']."</td><td>".$row['book_title']."</td><td>".$row['author']."</td>";
             ?>
-            <td><td><a href="management.php?book_index_edit=<?php echo $book_index;?>" >Edit</a></td></tr>
-                <a href="management.php?book_index_delete=<?php echo $book_index;?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
+            <td><a href="management.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
+            <td><a href="management.php?book_index_delete=<?php echo $row['book_index'];?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
             <?php
-
+            }
+        } else {
+            $sql_select = "SELECT * FROM book";
+            $result = mysqli_query($con, $sql_select);
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr><td>".$row['book_index']."</td><td>".$row['book_title']."</td><td>".$row['author']."</td>";
+                    ?>
+                    <td><a href="management.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
+                    <td><a href="management.php?book_index_delete=<?php echo $row['book_index'];?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='5'>No books found</td></tr>";
+            }
         }
         ?>
         </table>
         <?php
     }
-    elseif(isset($_POST['book_index_delete'])==true) && (isset($_GET['book_index_delete'])<>null)
+    elseif(isset($_POST['book_index_delete']) && isset($_GET['book_index_delete']))
     {
         $book_index=$_GET['book_index_delete'];
-        echo $book_index;
-        include "connectiom.php";
+        //echo $book_index;
+        include "connection.php";
         $sql_delete="DELETE FROM book WHERE book_index='$book_index'";
-        $result=mysqli_query($con,&sql_delete);
+        $result=mysqli_query($con,$sql_delete);
         if($result){
             echo "The book data deleted...";
         
         }
         else{
-            echo "Data is not deleted...".mysqli_error($con)
+            echo "Data is not deleted...".mysqli_error($con);
         }
     }
-    elseif(isset($_POST['book_index_edit'])==true) && (isset($_GET['book_index_edit'])<>null)
+    elseif((isset($_POST['book_index_edit'])==true) && (isset($_GET['book_index_edit'])<>null))
     {   
         $book_index=$_GET['book_index_edit'];
         echo "you can edit";}
+    
 ?>
