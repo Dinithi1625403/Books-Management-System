@@ -53,7 +53,7 @@
             while($row=mysqli_fetch_assoc($result)){
             echo "<tr><td>".$row['book_index']."</td><td>".$row['book_title']."</td><td>".$row['author']."</td>";
             ?>
-            <td><a href="management.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
+            <td><a href="newBook.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
             <td><a href="management.php?book_index_delete=<?php echo $row['book_index'];?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
             <?php
             }
@@ -64,7 +64,7 @@
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr><td>".$row['book_index']."</td><td>".$row['book_title']."</td><td>".$row['author']."</td>";
                     ?>
-                    <td><a href="management.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
+                    <td><a href="newBook.php?book_index_edit=<?php echo $row['book_index'];?>" >Edit</a></td>
                     <td><a href="management.php?book_index_delete=<?php echo $row['book_index'];?>" onclick="return confirm('Are you sure?');">Delete</a></td></tr>
                     <?php
                 }
@@ -91,9 +91,9 @@
             echo "Data is not deleted...".mysqli_error($con);
         }
     }
-    elseif((isset($_POST['book_index_edit'])==true) && (isset($_GET['book_index_edit'])<>null))
+    /*elseif((isset($_POST['book_index_edit'])==true) && (isset($_GET['book_index_edit'])<>null))
     {   
         $book_index=$_GET['book_index_edit'];
         echo "you can edit";}
-    
+    */
 ?>

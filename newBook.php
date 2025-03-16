@@ -1,6 +1,7 @@
 <?php
-if(isset($_GET['book_index'])){
-    $book_index=$_GET['book_index'];
+if(isset($_GET['book_index_edit'])){
+    $book_index=$_GET['book_index_edit'];
+    echo $book_index;
     
 }
 ?>
