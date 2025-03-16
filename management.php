@@ -76,7 +76,7 @@
         </table>
         <?php
     }
-    elseif(isset($_POST['book_index_delete']) && isset($_GET['book_index_delete']))
+    elseif(isset($_GET['book_index_delete']) && isset($_GET['book_index_delete']))
     {
         $book_index=$_GET['book_index_delete'];
         //echo $book_index;
