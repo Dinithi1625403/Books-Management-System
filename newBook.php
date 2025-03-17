@@ -2,6 +2,20 @@
 if(isset($_GET['book_index_edit'])){
     $book_index=$_GET['book_index_edit'];
     echo $book_index;
+    include "connection.php";
+    $sql_select="SELECT * FROM book WHERE `book_index`='$book_index'";
+    $result=mysqil_query($con,$sql_select);
+
+    if(mysqli_num_rows($result>0)){
+        while($row=mysqli_fetch_assoc($result)){
+            $book_index=$row['book_index'];
+            $book_title=$row['book_title'];
+            $version=$row['version'];
+            $author=$row['author'];
+            $availability=$row['availability'];
+            $book_type=$row['book_type'];
+        }
+    }
     
 }
 ?>
