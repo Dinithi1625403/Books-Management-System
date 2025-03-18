@@ -14,8 +14,7 @@ if(isset($_GET['book_index_edit'])){
             $author=$row['author'];
             $availability=$row['availability'];
             $book_type=$row['book_type'];
-        }
-    }
+
     
 }
 ?>
@@ -34,29 +33,53 @@ if(isset($_GET['book_index_edit'])){
             <table>
                 <tr>
                     <td>BooK Number:</td>
-                    <td><input type="number" maxlength="4" name="book-index"/></td>
+                    <td><input type="number" maxlength="4" name="book-index" value="<?php echo $book_index?>"/></td>
                 </tr> 
                 <tr>
                     <td>BooK Title:</td>
-                    <td><input type="text"size="30"  name="book-title"/></td>
+                    <td><input type="text"size="30"  name="book-title" value="<?php echo $book_title?>"/></td>
                 </tr> 
                 <tr>
                     <td>Version:</td>
-                    <td><input type="number"  name="version"/></td>
+                    <td><input type="number"  name="version"  value="<?php echo $version?>"/></td>
                 </tr>
                 <tr>
                     <td>Author:</td>
-                    <td><input type="text" size="30" name="author"/></td>
+                    <td><input type="text" size="30" name="author"  value="<?php echo $author?>"/></td>
                 </tr>  
                 <tr>
                     <td>Availability:</td>
-                    <td><input type="checkbox" value="Lending" checked name="availability[]"/>Lending</td>
-                    <td><input type="checkbox" value="Reference"  name="availability[]"/>Rferencing</td>
+                    <td><input type="checkbox" value="Lending"
+                    <?php
+                        if(strops($availability,"Lending"){
+                            echo "checked";
+                        })
+                    ?>
+                    name="availability[]"/>Lending</td>
+                    <td><input type="checkbox" value="Reference"  
+                    <?php
+                        if(strops($availability,"Reference"){
+                            echo "checked";
+                        })
+                        ?>
+                    name="availability[]"/>Rferencing</td>
                 </tr> 
                 <tr>
                     <td>Book Type:</td>
-                    <td><input type="radio" value="ICT" checked name="book-type"/>ICT</td>
-                    <td><input type="radio" value="None ICT"  name="book-type"/>None ICT</td>
+                    <td><input type="radio" value="ICT" 
+                    <?php
+                       if($book_type='ICT'){
+                          echo "checked";
+                       }
+                    ?>
+                    name="book-type"/>ICT</td>
+                    <td><input type="radio" value="None ICT" 
+                    <?php
+                       if($book_type='None ICT'){
+                          echo "checked";
+                       }
+                    ?>
+                    name="book-type"/>None ICT</td>
                 </tr> 
                 <tr>
                     <td colspan="2"><input type="submit" value="submit" name="sub"/></td>
@@ -67,6 +90,10 @@ if(isset($_GET['book_index_edit'])){
     </form>
 </body>
 </html>
+<?php
+        }
+    }
+?>
 
 <?php
     if(isset($_POST['sub'])){
