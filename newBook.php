@@ -101,7 +101,7 @@ if(isset($_GET['book_index_edit'])){
         if (!isset($con) || !$con) {
             die("Database connection not established! Check connection.php.");
         }
-        $book_index = mysqli_real_escape_string($con, $_POST['book-index']);
+        //$book_index = mysqli_real_escape_string($con, $_POST['book-index']);
         $book_title = mysqli_real_escape_string($con, $_POST['book-title']);
         $version = mysqli_real_escape_string($con, $_POST['version']);
         $author = mysqli_real_escape_string($con, $_POST['author']);
@@ -120,8 +120,8 @@ if(isset($_GET['book_index_edit'])){
         echo $book_type; 
         
         
-        $sql_insert="INSERT INTO book  (`book_index`,`book_title`,`version`,`author`,`availability`,`book_type`)
-                     VALUES('$book_index','$book_title','$version','$author','$availability','$book_type')";
+        $sql_update="UPDATE SET book 
+                     '$book_title','$version','$author','$availability','$book_type'";
         if($result=mysqli_query($con,$sql_insert)){
             echo "Data successfully submited";
         }
