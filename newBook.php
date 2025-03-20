@@ -121,7 +121,7 @@ if(isset($_GET['book_index_edit'])){
         
         
         $sql_update="UPDATE SET book 
-                     '$book_title','$version','$author','$availability','$book_type'";
+                    '$book_title','$version','$author','$availability','$book_type'";
         if($result=mysqli_query($con,$sql_insert)){
             echo "Data successfully submited";
         }
