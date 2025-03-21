@@ -27,6 +27,8 @@ if(isset($_GET['book_index_edit'])){
     <title>Add new book</title>
 </head>
 <body>
+    <div class="container">
+        
     <form method="post"action="">
         <fieldset>
             <legend>Book Data</legend>
@@ -88,6 +90,7 @@ if(isset($_GET['book_index_edit'])){
         </fieldset>
 
     </form>
+    </div>
 </body>
 </html>
 <?php
