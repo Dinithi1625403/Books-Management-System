@@ -7,7 +7,8 @@
 </head>
 <body>
     
-
+    <div class="container">
+        
     <form method="post" action="">
     <fieldset>
         <legend>Add new book</legend>
@@ -22,6 +23,7 @@
               
     </fieldset>
     </form>
+</div>
 </body>
 </html>
 
