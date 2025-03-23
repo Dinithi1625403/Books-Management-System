@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
     <form action="" method="post">
         <fieldset>
             <legend>Search book</legend>
@@ -24,6 +25,7 @@
             </table>
         </fieldset>
         </form>
+    </div>
 </body>
 </html>
 
