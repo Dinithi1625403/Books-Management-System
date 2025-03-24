@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
+    <div class="container">
     <form action="" method="post">
         <fieldset>
             <legend>Search book</legend>
