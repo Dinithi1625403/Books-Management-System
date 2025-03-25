@@ -123,13 +123,14 @@ if(isset($_GET['book_index_edit'])){
         echo $book_type; 
         
         
-        $sql_update="UPDATE SET book 
-                    '$book_title','$version','$author','$availability','$book_type'";
-        if($result=mysqli_query($con,$sql_insert)){
-            echo "Data successfully submited";
+        $sql_update="UPDATE book  SET 
+         book_title='$book_title', version='$version', author='$author',availability='$availability',book_type='$book_type'
+         WHERE book_index='$book_index'";
+        if($result=mysqli_query($con,$sql_update)){
+            echo "Data successfully updated";
         }
         else{
-            echo "Sorry. Data not submitted: " . mysqli_error($con);
+            echo "Sorry. Data not updated: " . mysqli_error($con);
           
         }
     } 
