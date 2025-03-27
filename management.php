@@ -7,6 +7,7 @@
 </head>
 <body>
     <div class="container">
+        <h1>Search your favorite book</h1>
     <form action="" method="post">
         <fieldset>
             <legend>Search book</legend>
