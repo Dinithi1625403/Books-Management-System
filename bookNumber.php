@@ -8,7 +8,7 @@
 <body>
     
     <div class="container">
-        
+        <h1>Add a new book</h1>
     <form method="post" action="">
     <fieldset>
         <legend>Add new book</legend>
