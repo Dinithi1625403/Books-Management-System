@@ -28,7 +28,9 @@ if(isset($_GET['book_index_edit'])){
 </head>
 <body>
     <div class="container">
-        <h1>Enter book data<h1>
+        <h1>Book data<h1>
+        <p>Enter the book data in the form below:</p>
+           
     <form method="post"action="">
         <fieldset>
             <legend>Book Data</legend>
