@@ -1,13 +1,5 @@
 
 
-<<<<<<< HEAD
-<?php
-echo "Hello World!";
-?>
-
-
-=======
->>>>>>> fc096d7b43c7dc771d47753545416f5b6d7ae964
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +9,6 @@ echo "Hello World!";
 </head>
 <body>
     <div class="container">
-<<<<<<< HEAD
-        
-        <h1>Welcome to the Books Management System</h1>
-        <p><a href="add_book.php">Add New Book</a></p>
-        <p><a href="view_books.php">View Books</a></p>
-        <p><a href="logout.php">Logout</a></p>
-    </div>
-</body>
-</html>
-=======
         <h1>Welcome to the Books Management System</h1>
         <p><a href="add_book.php">Add New Book</a></p>
         <p><a href="view_books.php">View All Books</a></p>
@@ -36,4 +18,3 @@ echo "Hello World!";
 </html>
 
 
->>>>>>> fc096d7b43c7dc771d47753545416f5b6d7ae964
