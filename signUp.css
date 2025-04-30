@@ -4,6 +4,10 @@ body{
 p{
     color: black;
 }
+.signUp-container{
+    background-color: rgb(255, 255, 255);
+    width: fix-content;
+}
 input{
     width: 200px;
     height: 30px;
@@ -12,4 +16,5 @@ input{
     margin: 5px;
     align-self: center;
     padding: 2px;
+
 }
