@@ -7,6 +7,7 @@ p{
 .signUp-container{
     background-color: rgb(255, 255, 255);
     width: fix-content;
+    border-radius:2px;
 }
 input{
     width: 200px;
