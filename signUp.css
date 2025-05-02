@@ -6,8 +6,11 @@ p{
 }
 .signUp-container{
     background-color: rgb(255, 255, 255);
-    width: fix-content;
+    width: 60%;
     border-radius:2px;
+    justify-self: center;
+    padding: 20px;
+    transform: translateY(50%);
 }
 input{
     width: 200px;
