@@ -8,41 +8,47 @@ body{
 p{
     color: black;
 }
-.signUp-container{
-    background-color: rgb(255, 255, 255,0.5);
-    min-width: 600px;
-    max-width: 300px;
-    border-radius:10px;
+.signUp-container {
+    background-color: rgba(255, 255, 255, 0.5);
+    min-width: 300px;
+    max-width: 600px;
+    border-radius: 10px;
     justify-self: center;
-    padding: 20px 20px;
+    padding: 40px 20px;
     transform: translateY(50%);
     border: 1px solid gray;
-    
     backdrop-filter: blur(10px);
-
+    margin: 0 auto;
 }
+
+
 input{
+    font-size: 24px;
     width: 90%;
     padding: 10px ;
     margin: 2px;
     display: block;
     margin: 2px auto;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
    
 
 }
 button{
+    font-size: 24px;
     background-color: rgb(0, 0, 0);
     color: white;
     border-radius: 5px;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 40px;
     margin: auto;
     cursor: pointer;
     width: 90%;
     display: block;
     margin: 5px auto;
+    border-radius: 10px;
 }
 button:hover{
     background-color: rgb(0, 0, 0,0.5);
 }
+
