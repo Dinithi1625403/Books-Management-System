@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebas
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
-
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyAE8WYOlUJiV-IIkkRvZ4oTMavzTjUXyiI",
@@ -36,5 +36,26 @@ signUp.addEventListener('click', (event) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             alert(errorMessage);
+        });
+});
+
+const auth = getAuth(app);
+
+const loginForm = document.getElementById("login-form");
+loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            alert("Login Successful!");
+            console.log("User:", user);
+        })
+        .catch((error) => {
+            document.getElementById("error-message").textContent = error.message;
+            console.error("Login Error:", error);
         });
 });

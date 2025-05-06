@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="signUp.css">
 </head>
 <body>
-    <script type="module" src="script.js">
-
-    </script>
-    <div class="login-container">
+    
+    <div class="form-container">
         <h1>Login</h1>
         <form id="login-form">
-            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+            <button type="submit" id="login">Login</button>
         </form>
         <p>Don't have an account? <a href="signUp.html">Sign Up</a></p>
         <p id="error-message" style="color: red;"></p>
     </div>
+    <script type="module" src="script.js" defer>
+
+    </script>
 </body>
 </html>
