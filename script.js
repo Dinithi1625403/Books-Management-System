@@ -1,4 +1,5 @@
-// Import the functions you need from the SDKs you need
+
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
@@ -55,7 +56,13 @@ loginForm.addEventListener("submit", (event) => {
             console.log("User:", user);
         })
         .catch((error) => {
-            document.getElementById("error-message").textContent = error.message;
-            console.error("Login Error:", error);
+            const errorMessage = error.message;
+            const errorElement = document.getElementById("error-message");
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+                errorElement.style.display = "block"; // Make sure it's visible
+            }
+            console.error("Firebase login error:", errorMessage);
         });
+        
 });
