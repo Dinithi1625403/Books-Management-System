@@ -5,8 +5,16 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+h1{
+    color: black;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
 p{
     color: black;
+    
 }
 .form-container {
     background-color: rgba(255, 255, 255, 0.5);
