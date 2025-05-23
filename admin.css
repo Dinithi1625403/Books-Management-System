@@ -38,11 +38,25 @@
  fill: #9e9ea7;
  width: 1rem;
  height: 1rem;
+ text-align: center;
+ align-self: center;
 }
 
+@media (max-width: 768px) {
+    .icon {
+        left: 0.7rem;
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+}
 
-
-
+@media (max-width: 576px) {
+    .icon {
+        left: 0.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+}
 
  nav ul {
             display: flex;
@@ -83,19 +97,48 @@
 
     .sidebtn {
         width: 100%;
-        min-width:280px;
+        min-width: 280px;
         max-width: 100%;
-        height: 40px;
-        
+       
+        justify-content: center;
         color: #0d0c22;
         border: 2px solid blue;
         border-radius: 8px;
-        padding: 20px 40px;
+        padding: 12px 24px;
         cursor: pointer;
         transition: .3s ease;
         box-sizing: border-box;
         font-size: 1rem;
         margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(90deg, #eaf6ff 0%, #e0e7ff 100%);
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    span{
+        width: 40px;
+        height: 20px;
+        margin-right: 10px;
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .sidebtn {
+            min-width: 120px;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            height: auto;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .sidebtn {
+            min-width: 80px;
+            font-size: 0.9rem;
+            padding: 6px 8px;
+        }
     }
 
     @media (max-width: 768px) {
