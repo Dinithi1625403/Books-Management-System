@@ -117,6 +117,12 @@
         font-weight: 600;
         
     }
+    .sidebtn:hover {
+        background-color: #4b2cb2;
+        box-shadow: 0 0 0 4px rgba(97, 76, 234, 0.1);
+        color: #fff;
+        border-radius: 20px;
+    }
     span{
         width: 40px;
         height: 20px;
