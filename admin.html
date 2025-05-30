@@ -9,14 +9,28 @@
     
 </head>
 <body>
-   
-            <!-- Navbar -->
-<nav style="background-color: #0D8ABC; color: white; padding: 10px;">
-    <span style="font-weight: bold;">Admin Dashboard</span>
-    <div id="admin-info" style="display: none; float: right;">
-        <img id="admin-avatar" src="" alt="Avatar" style="border-radius: 50%; width: 32px; height: 32px;">
-        <span id="admin-name"></span> |
-        <span id="admin-email"></span>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0D8ABC;">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Admin Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <form class="d-flex ms-auto me-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item d-flex align-items-center">
+                        <img id="admin-avatar" src="" alt="Avatar" style="border-radius: 50%; width: 32px; height: 32px; margin-right: 8px;">
+                        <span id="admin-name" class="me-2"></span>
+                        <span id="admin-email" class="text-light small"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
             
