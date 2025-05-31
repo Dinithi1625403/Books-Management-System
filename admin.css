@@ -92,7 +92,8 @@
             border-radius: 8px;
             max-width: 300px;
             float: left;
-            height: 100vh;
+            height: calc(100vh - 60px);
+            margin-top: 0;
         }
 
     .sidebtn {
