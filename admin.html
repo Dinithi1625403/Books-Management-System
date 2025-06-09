@@ -5,221 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Book Management</title>
     <link rel="stylesheet" href="admin.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <style>
-        body { background: #f8f9fa; }
-        .sidebar { min-height: 100vh; background: #fff; border-right: 1px solid #e3e3e3; }
-        .sidebtn { background: none; border: none; color: #0D8ABC; font-size: 1.1rem; padding: 12px 0; transition: background 0.2s; }
-        .sidebtn:hover, .sidebtn.active { background: #e7f4fa; color: #0a6a8a; }
-        .dashboard-card { min-width: 180px; }
-        .table-actions button { margin-right: 5px; }
-    </style>
+    
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0D8ABC;height: 60px;">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">Admin Dashboard</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <form class="d-flex ms-auto me-3" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search books..." aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
-                <ul class="navbar-nav mb-2 mb-lg-0">
-                    <li class="nav-item d-flex align-items-center">
-                        <img id="admin-avatar" src="https://ui-avatars.com/api/?name=Admin" alt="Avatar" style="border-radius: 50%; width: 32px; height: 32px; margin-right: 8px;">
-                        <span id="admin-name" class="me-2">Admin</span>
-                        <span id="admin-email" class="text-light small">admin@books.com</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+        <form role="search">
+            <input type="search" placeholder="Search books..." aria-label="Search">
+            <button type="submit">Search</button>
+        </form>
+        <ul class="navbar-nav">
+            <li class="nav-item" style="display: flex; align-items: center;">
+                <img id="admin-avatar" src="https://ui-avatars.com/api/?name=Admin" alt="Avatar">
+                <span id="admin-name">Admin</span>
+                <span id="admin-email" class="text-light">admin@books.com</span>
+            </li>
+        </ul>
     </nav>
 
     <!-- Sidebar and Content -->
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
-            <nav class="col-2 col-md-2 sidebar p-0">
-                <div class="d-flex flex-md-column flex-row align-items-center align-items-md-start p-2 p-md-3 h-100">
-                    <button class="sidebtn mb-0 mb-md-2 d-flex align-items-center justify-content-center w-100 w-md-auto active" title="Dashboard">
-                        <span class="me-0 me-md-2"><i class="bi bi-speedometer2"></i></span>
-                        <span class="d-none d-md-inline">Dashboard</span>
-                    </button>
-                    <button class="sidebtn mb-0 mb-md-2 d-flex align-items-center justify-content-center w-100 w-md-auto" title="Books">
-                        <span class="me-0 me-md-2"><i class="bi bi-book"></i></span>
-                        <span class="d-none d-md-inline">Books</span>
-                    </button>
-                    <button class="sidebtn mb-0 mb-md-2 d-flex align-items-center justify-content-center w-100 w-md-auto" title="Users">
-                        <span class="me-0 me-md-2"><i class="bi bi-people"></i></span>
-                        <span class="d-none d-md-inline">Users</span>
-                    </button>
-                    <button class="sidebtn mb-0 mb-md-2 d-flex align-items-center justify-content-center w-100 w-md-auto" title="Settings">
-                        <span class="me-0 me-md-2"><i class="bi bi-gear"></i></span>
-                        <span class="d-none d-md-inline">Settings</span>
-                    </button>
-                    <button class="sidebtn mb-0 mb-md-2 d-flex align-items-center justify-content-center w-100 w-md-auto" title="Logout">
-                        <span class="me-0 me-md-2"><i class="bi bi-box-arrow-right"></i></span>
-                        <span class="d-none d-md-inline">Logout</span>
-                    </button>
-                </div>
+            <nav class="sidebar">
+                <button class="sidebtn active" title="Dashboard">
+                    <i class="bi bi-speedometer2"></i>
+                    <span class="d-none d-md-inline">Dashboard</span>
+                </button>
+                <button class="sidebtn" title="Books">
+                    <i class="bi bi-book"></i>
+                    <span class="d-none d-md-inline">Books</span>
+                </button>
+                <button class="sidebtn" title="Users">
+                    <i class="bi bi-people"></i>
+                    <span class="d-none d-md-inline">Users</span>
+                </button>
+                <button class="sidebtn" title="Settings">
+                    <i class="bi bi-gear"></i>
+                    <span class="d-none d-md-inline">Settings</span>
+                </button>
+                <button class="sidebtn" title="Logout">
+                    <i class="bi bi-box-arrow-right"></i>
+                    <span class="d-none d-md-inline">Logout</span>
+                </button>
             </nav>
-            <style>
-                @media (max-width:900px) {
-                    .sidebar {
-                        min-height: auto !important;
-                        height: 60px;
-                        width: 100vw;
-                        position: fixed;
-                        top: 60px;
-                        left: 0;
-                        z-index: 1030;
-                        border-right: none;
-                        border-bottom: 1px solid #e3e3e3;
-                    }
-                    .sidebar .d-flex {
-                        flex-direction: row !important;
-                        justify-content: space-around;
-                        align-items: center !important;
-                        height: 100%;
-                        padding: 0 !important;
-                    }
-                    .sidebtn {
-                        font-size: 1.3rem;
-                        padding: 10px 0;
-                        width: 100%;
-                        border-radius: 0;
-                        justify-content: center !important;
-                    }
-                }
-                @media (max-width:900px) {
-                    .col-2.sidebar {
-                        flex: 0 0 100vw;
-                        max-width: 100vw;
-                    }
-                    .col-10 {
-                        margin-top: 60px;
-                        width: 100vw;
-                        max-width: 100vw;
-                        flex: 0 0 100vw;
-                    }
-                }
-            </style>
             <!-- Main Content -->
-            <div class="col-10">
-                <div class="container mt-4">
-                    <!-- Dashboard Summary Cards -->
-                    <div class="row mb-4">
-                        <div class="col-md-4">
-                            <div class="card dashboard-card shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-book me-2"></i>Total Books</h5>
-                                    <h2 id="total-books">120</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card dashboard-card shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-people me-2"></i>Total Users</h5>
-                                    <h2 id="total-users">45</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card dashboard-card shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><i class="bi bi-clock-history me-2"></i>Books Issued</h5>
-                                    <h2 id="books-issued">30</h2>
-                                </div>
-                            </div>
-                        </div>
+            <div class="main-content">
+                <!-- Dashboard Summary Cards -->
+                <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 32px;">
+                    <div class="dashboard-card">
+                        <h5><i class="bi bi-book"></i> Total Books</h5>
+                        <h2 id="total-books">120</h2>
                     </div>
-                    <!-- Book List Table -->
-                    <div class="dashboard mb-4 p-4 bg-light rounded shadow-sm">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h2>Books List</h2>
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBookModal">
-                                <i class="bi bi-plus-lg"></i> Add Book
-                            </button>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Category</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>The Great Gatsby</td>
-                                        <td>F. Scott Fitzgerald</td>
-                                        <td>Classic</td>
-                                        <td><span class="badge bg-success">Available</span></td>
-                                        <td class="table-actions">
-                                            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>1984</td>
-                                        <td>George Orwell</td>
-                                        <td>Dystopian</td>
-                                        <td><span class="badge bg-secondary">Issued</span></td>
-                                        <td class="table-actions">
-                                            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <!-- More rows as needed -->
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="dashboard-card">
+                        <h5><i class="bi bi-people"></i> Total Users</h5>
+                        <h2 id="total-users">45</h2>
                     </div>
-                    <!-- Users List Table -->
-                    <div class="dashboard mb-4 p-4 bg-light rounded shadow-sm">
-                        <h2>Users List</h2>
-                        <div class="table-responsive">
-                            <table class="table table-striped align-middle">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Jane Doe</td>
-                                        <td>jane@example.com</td>
-                                        <td>User</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>John Smith</td>
-                                        <td>john@example.com</td>
-                                        <td>Admin</td>
-                                        <td><span class="badge bg-success">Active</span></td>
-                                    </tr>
-                                    <!-- More rows as needed -->
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="dashboard-card">
+                        <h5><i class="bi bi-clock-history"></i> Books Issued</h5>
+                        <h2 id="books-issued">30</h2>
+                    </div>
+                </div>
+                <!-- Book List Table -->
+                <div class="dashboard">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+                        <h2>Books List</h2>
+                        <button class="btn" id="openAddBookModal">
+                            <i class="bi bi-plus-lg"></i> Add Book
+                        </button>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Author</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>The Great Gatsby</td>
+                                    <td>F. Scott Fitzgerald</td>
+                                    <td>Classic</td>
+                                    <td><span class="badge bg-success">Available</span></td>
+                                    <td class="table-actions">
+                                        <button class="btn-warning"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn-danger"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>1984</td>
+                                    <td>George Orwell</td>
+                                    <td>Dystopian</td>
+                                    <td><span class="badge bg-secondary">Issued</span></td>
+                                    <td class="table-actions">
+                                        <button class="btn-warning"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn-danger"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <!-- More rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Users List Table -->
+                <div class="dashboard">
+                    <h2>Users List</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Jane Doe</td>
+                                    <td>jane@example.com</td>
+                                    <td>User</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>John Smith</td>
+                                    <td>john@example.com</td>
+                                    <td>Admin</td>
+                                    <td><span class="badge bg-success">Active</span></td>
+                                </tr>
+                                <!-- More rows as needed -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -227,27 +155,27 @@
     </div>
 
     <!-- Add Book Modal -->
-    <div class="modal fade" id="addBookModal" tabindex="-1" aria-labelledby="addBookModalLabel" aria-hidden="true">
+    <div class="modal" id="addBookModal">
       <div class="modal-dialog">
-        <form class="modal-content">
+        <form>
           <div class="modal-header">
-            <h5 class="modal-title" id="addBookModalLabel">Add New Book</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title">Add New Book</h5>
+            <button type="button" class="btn-close" id="closeAddBookModal" aria-label="Close">&times;</button>
           </div>
           <div class="modal-body">
-              <div class="mb-3">
+              <div>
                   <label for="bookTitle" class="form-label">Title</label>
                   <input type="text" class="form-control" id="bookTitle" required>
               </div>
-              <div class="mb-3">
+              <div>
                   <label for="bookAuthor" class="form-label">Author</label>
                   <input type="text" class="form-control" id="bookAuthor" required>
               </div>
-              <div class="mb-3">
+              <div>
                   <label for="bookCategory" class="form-label">Category</label>
                   <input type="text" class="form-control" id="bookCategory" required>
               </div>
-              <div class="mb-3">
+              <div>
                   <label for="bookStatus" class="form-label">Status</label>
                   <select class="form-select" id="bookStatus">
                       <option value="Available">Available</option>
@@ -256,23 +184,35 @@
               </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Add Book</button>
+            <button type="button" class="btn-secondary" id="cancelAddBookModal">Cancel</button>
+            <button type="submit" class="btn-primary">Add Book</button>
           </div>
         </form>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Example: Add Book Modal submission (no backend, just demo)
-        document.querySelector('#addBookModal form').addEventListener('submit', function(e) {
+        // Modal open/close logic
+        const addBookModal = document.getElementById('addBookModal');
+        document.getElementById('openAddBookModal').onclick = function() {
+            addBookModal.classList.add('show');
+        };
+        document.getElementById('closeAddBookModal').onclick = function() {
+            addBookModal.classList.remove('show');
+        };
+        document.getElementById('cancelAddBookModal').onclick = function() {
+            addBookModal.classList.remove('show');
+        };
+        // Modal form submission (demo)
+        addBookModal.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // You can add logic here to update the table dynamically
             alert('Book added (demo only)');
-            var modal = bootstrap.Modal.getInstance(document.getElementById('addBookModal'));
-            modal.hide();
+            addBookModal.classList.remove('show');
         });
+        // Close modal on background click
+        addBookModal.onclick = function(e) {
+            if (e.target === addBookModal) addBookModal.classList.remove('show');
+        };
     </script>
 </body>
 </html>
