@@ -32,17 +32,24 @@ body {
     border: none;
     color: #0D8ABC;
     font-size: 1.1rem;
-    padding: 12px 0;
+    padding: 12px;
     text-align: left;
     width: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
 }
-.sidebtn:hover, .sidebtn.active {
+.sidebtn i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+.sidebtn:hover,
+.sidebtn.active {
     background: #e7f4fa;
     color: #0a6a8a;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .main-content {
     flex: 1;
