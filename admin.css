@@ -34,12 +34,14 @@ body {
     font-size: 1.1rem;
     padding: 12px;
     text-align: left;
-    width: 100%;
+    width: calc(100% - 40px);
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    border-radius: 12px;
+    border-radius:20rem;
+    align-self: center;
+    margin-top:10px;
 }
 .sidebtn i {
     margin-right: 8px;
@@ -50,6 +52,8 @@ body {
     background: #e7f4fa;
     color: #0a6a8a;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    
 }
 .main-content {
     flex: 1;
