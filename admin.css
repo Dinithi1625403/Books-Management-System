@@ -139,3 +139,10 @@ tr:nth-child(even) {
     .main-content { padding: 12px 2vw; }
     .dashboard-card, .dashboard { padding: 14px; }
 }
+
+.addBook{
+    background-color: #0D8ABC;
+    padding: 5px 20px;
+    color: #fff;
+    border: none;
+}
