@@ -146,3 +146,12 @@ tr:nth-child(even) {
     color: #fff;
     border: none;
 }
+.search{
+    
+    padding: 5px 20px;
+    color: #fff;
+    border: none;
+    margin-left: 10px;
+    border-radius:5px;
+    width: 200px;
+}
