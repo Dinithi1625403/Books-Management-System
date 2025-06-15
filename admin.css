@@ -155,3 +155,10 @@ tr:nth-child(even) {
     border-radius:5px;
     width: 200px;
 }
+.searchbtn{
+    
+    padding: 5px 20px;
+    color: #000000;
+    border: none;
+    border-radius:5px;
+}
