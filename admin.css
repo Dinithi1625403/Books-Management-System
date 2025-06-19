@@ -168,3 +168,16 @@ tr:nth-child(even) {
     border: none;
     border-radius:5px;
 }
+   @media (max-width: 600px) {
+            .navbar-search {
+            max-width: 100%;
+            width: 100%;
+            margin: 8px 0;
+            }
+            .navbar-search input.search {
+            font-size: 1em;
+            }
+            .navbar-search button.searchbtn {
+            font-size: 1em;
+            }
+        }
