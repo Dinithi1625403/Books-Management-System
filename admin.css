@@ -42,6 +42,7 @@ body {
     border-radius:20rem;
     align-self: center;
     margin-top:10px;
+    
 }
 .sidebtn i {
     margin-right: 8px;
@@ -52,6 +53,7 @@ body {
     background: #e7f4fa;
     color: #0a6a8a;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     
     
 }
@@ -148,6 +150,7 @@ tr:nth-child(even) {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 .addBook:hover{
     background-color: #1f7a9c;
