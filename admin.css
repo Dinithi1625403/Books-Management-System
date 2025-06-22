@@ -70,6 +70,12 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     padding: 24px;
     margin-bottom: 24px;
+    font-size: 16px;
+}
+.dashboard-card {
+    flex: 1;
+    margin-right: 16px;
+    font-size:20px;
 }
 table {
     width: 100%;
