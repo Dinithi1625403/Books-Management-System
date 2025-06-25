@@ -166,7 +166,9 @@ tr:nth-child(even) {
     background-color: #1f7a9c;
 }
 .viewMore{
-    
+    display: block;
+    margin-left: auto;
+    text-align: center;
     background-color: #00000086;
     padding: 10px 20px;
     color: #fff;
