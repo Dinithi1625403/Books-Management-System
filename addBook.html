@@ -1,0 +1,65 @@
+<div class="container">
+    <h1>Book data</h1>
+    <p>Enter the book data in the form below:</p>
+       
+    <form method="post" action="">
+        <fieldset>
+            <legend>Book Data</legend>
+            <table>
+                <tr>
+                    <td>Book Number:</td>
+                    <td><input type="number" maxlength="4" name="book-index" value="<?php echo $book_index; ?>"/></td>
+                </tr> 
+                <tr>
+                    <td>Book Title:</td>
+                    <td><input type="text" size="30" name="book-title" value="<?php echo $book_title; ?>"/></td>
+                </tr> 
+                <tr>
+                    <td>Version:</td>
+                    <td><input type="number" name="version" value="<?php echo $version; ?>"/></td>
+                </tr>
+                <tr>
+                    <td>Author:</td>
+                    <td><input type="text" size="30" name="author" value="<?php echo $author; ?>"/></td>
+                </tr>  
+                <tr>
+                    <td>Availability:</td>
+                    <td><input type="checkbox" value="Lending"
+                    <?php
+                        if (strpos($availability, "Lending") !== false) {
+                            echo "checked";
+                        }
+                    ?>
+                    name="availability[]"/>Lending</td>
+                    <td><input type="checkbox" value="Reference"  
+                    <?php
+                        if (strpos($availability, "Reference") !== false) {
+                            echo "checked";
+                        }
+                    ?>
+                    name="availability[]"/>Referencing</td>
+                </tr> 
+                <tr>
+                    <td>Book Type:</td>
+                    <td><input type="radio" value="ICT" 
+                    <?php
+                       if ($book_type == 'ICT') {
+                          echo "checked";
+                       }
+                    ?>
+                    name="book-type"/>ICT</td>
+                    <td><input type="radio" value="None ICT" 
+                    <?php
+                       if ($book_type == 'None ICT') {
+                          echo "checked";
+                       }
+                    ?>
+                    name="book-type"/>None ICT</td>
+                </tr> 
+                <tr>
+                    <td colspan="2"><input type="submit" value="submit" name="sub"/></td>
+                </tr>  
+            </table>
+        </fieldset>
+    </form>
+</div>
