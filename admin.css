@@ -210,3 +210,12 @@ tr:nth-child(even) {
             font-size: 1em;
             }
         }
+
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2e31c9;
+
+}        

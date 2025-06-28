@@ -26,9 +26,10 @@ if (isset($_GET['book_index_edit'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add new book</title>
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <div class="container">
+    <div class="form-container" >
         <h1>Book data</h1>
         <p>Enter the book data in the form below:</p>
            

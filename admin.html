@@ -77,7 +77,7 @@
                 <div class="dashboard">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
                         <h2>Books List</h2>
-                        <button class="btn addBook" id="openAddBookModal" onclick="window.location.href='.addBook.html'">
+                        <button class="btn addBook" onclick="window.location.href='addBook.html'">
                             <i class="bi bi-plus-lg"></i> Add Book
                         </button>
                     </div>
@@ -197,28 +197,5 @@
       </div>
     </div>
 
-    <script>
-        // Modal open/close logic
-        const addBookModal = document.getElementById('addBookModal');
-        document.getElementById('openAddBookModal').onclick = function() {
-            addBookModal.classList.add('show');
-        };
-        document.getElementById('closeAddBookModal').onclick = function() {
-            addBookModal.classList.remove('show');
-        };
-        document.getElementById('cancelAddBookModal').onclick = function() {
-            addBookModal.classList.remove('show');
-        };
-        // Modal form submission (demo)
-        addBookModal.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Book added (demo only)');
-            addBookModal.classList.remove('show');
-        });
-        // Close modal on background click
-        addBookModal.onclick = function(e) {
-            if (e.target === addBookModal) addBookModal.classList.remove('show');
-        };
-    </script>
 </body>
 </html>
