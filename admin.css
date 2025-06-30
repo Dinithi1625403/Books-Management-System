@@ -218,4 +218,9 @@ tr:nth-child(even) {
     padding: 20px;
     background-color: #2e31c9;
 
-}        
+}   
+
+.add-container{
+    margin:20px;
+    padding: 20px;
+}
