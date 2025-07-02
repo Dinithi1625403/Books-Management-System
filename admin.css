@@ -231,3 +231,11 @@ tr:nth-child(even) {
     border-radius: 8px;
   
 }
+
+/* Style for elements with class 'submit' */
+
+
+/* Style for submit buttons by type attribute */
+button[type="submit"], input[type="submit"] {
+    padding: 10px 10px;
+}
