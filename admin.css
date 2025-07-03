@@ -232,10 +232,11 @@ tr:nth-child(even) {
   
 }
 
-/* Style for elements with class 'submit' */
 
-
-/* Style for submit buttons by type attribute */
-button[type="submit"], input[type="submit"] {
-    padding: 10px 10px;
+.submit{
+    padding: 20px 10px;
+    background-color:#0D8ABC;
+    color: #c2d2e4;
 }
+
+
