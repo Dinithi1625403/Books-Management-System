@@ -221,15 +221,24 @@ tr:nth-child(even) {
 }   
 
 .add-container{
-    margin:20px;
+    
+    border-radius: 10px;
+    margin:auto;
     padding: 20px;
+    width: 600px;
+    max-width: 600px;
+    background-color: #ffffff;
+    height: fit-content;
+    margin-top: 100px;
 }
 
 .add-form {
-    background-color: #fff;
+    
     padding: 20px;
     border-radius: 8px;
-  
+    margin:0;
+    max-width: 100%;
+    width: calc(100% - 100px);
 }
 
 
@@ -238,5 +247,46 @@ tr:nth-child(even) {
     background-color:#0D8ABC;
     color: #c2d2e4;
 }
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+   
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+input[type="text"],
+input[type="number"]
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
 
-
+/* Responsive styles */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 10px;
+    }
+    .add-form {
+        padding: 10px;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="number"] {
+        font-size: 1em;
+        padding: 8px;
+    }
+    label {
+        font-size: 1em;
+    }
+}
