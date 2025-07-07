@@ -221,7 +221,7 @@ tr:nth-child(even) {
 }   
 
 .add-container{
-    
+    font-size: 20px;
     border-radius: 10px;
     margin:auto;
     padding: 20px;
@@ -271,7 +271,7 @@ label {
 input[type="text"],
 input[type="number"]
 {
-    padding: 10px;
+    padding: 20px;
     border: none;
     border-radius: 10px;
     font-size: 16px;
@@ -279,7 +279,7 @@ input[type="number"]
     box-sizing: border-box;
     max-width: 100%;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-
+    margin: 10px 0;
 }
 
 /* Responsive styles */
