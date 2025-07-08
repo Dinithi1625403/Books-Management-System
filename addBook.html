@@ -64,49 +64,42 @@
     <form method="post" action="" class="add-form">
         <div class="form-group">
             <label for="book-index">Book Number:</label>
-            <input type="number" maxlength="4" id="book-index" name="book-index"/>
+            <input type="number" maxlength="4" id="book-index" name="book-index" placeholder="Enter book number"/>
         </div>
         <div class="form-group">
             <label for="book-title">Book Title:</label>
-            <input type="text" size="30" id="book-title" name="book-title"/>
+            <input type="text" size="30" id="book-title" name="book-title" placeholder="Enter book title"/>
         </div>
         <div class="form-group">
             <label for="version">Version:</label>
-            <input type="number" id="version" name="version"/>
+            <input type="number" id="version" name="version" placeholder="Enter version"/>
         </div>
         <div class="form-group">
             <label for="author">Author:</label>
-            <input type="text" size="30" id="author" name="author" />
+            <input type="text" size="30" id="author" name="author" placeholder="Enter author name" />
         </div>
         <div class="form-group">
             <label>Availability:</label>
             <div>
-                <input type="checkbox" id="lending" value="Lending"
-                
-                name="availability[]"/>
+                <input type="checkbox" id="lending" value="Lending" name="availability[]"/>
                 <label for="lending">Lending</label>
-                <input type="checkbox" id="reference" value="Reference"
-                
-                name="availability[]"/>
+                <input type="checkbox" id="reference" value="Reference" name="availability[]"/>
                 <label for="reference">Referencing</label>
             </div>
         </div>
         <div class="form-group">
             <label>Book Type:</label>
             <div>
-                <input type="radio" id="ict" value="ICT"
-                
-                name="book-type"/>
+                <input type="radio" id="ict" value="ICT" name="book-type"/>
                 <label for="ict">ICT</label>
-                <input type="radio" id="none-ict" value="None ICT"
-                
-                name="book-type"/>
+                <input type="radio" id="none-ict" value="None ICT" name="book-type"/>
                 <label for="none-ict">None ICT</label>
             </div>
         </div>
         <div class="form-group">
             <button type="submit" class="submit" value="submit" name="sub">submit</button>
         </div>
+    </form>
     </form>
 </div>
 
