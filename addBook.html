@@ -60,8 +60,8 @@
 <div class="add-container">
     <h1>Book data</h1>
     <p>Enter the book data in the form below:</p>
-       
-    <form method="post" action="" class="add-form">
+     <hr>  
+    <form method="post" action="" class="add-form" style="font-size: 20px;">
         <div class="form-group">
             <label for="book-index">Book Number:</label>
             <input type="number" maxlength="4" id="book-index" name="book-index" placeholder="Enter book number"/>
@@ -82,25 +82,25 @@
             <label>Availability:</label>
             <div>
                 <input type="checkbox" id="lending" value="Lending" name="availability[]"/>
-                <label for="lending">Lending</label>
+                <label for="lending" style="font-weight: normal;">Lending</label>
                 <input type="checkbox" id="reference" value="Reference" name="availability[]"/>
-                <label for="reference">Referencing</label>
+                <label for="reference" style="font-weight: normal;">Referencing</label>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="margin-top:40px;">
             <label>Book Type:</label>
             <div>
-                <input type="radio" id="ict" value="ICT" name="book-type"/>
-                <label for="ict">ICT</label>
-                <input type="radio" id="none-ict" value="None ICT" name="book-type"/>
-                <label for="none-ict">None ICT</label>
+                <input type="radio" id="ict" value="ICT" name="book-type" style="font-weight: normal;">
+                <label for="ict" style="font-weight: normal;">ICT</label>
+                <input type="radio" id="none-ict" value="None ICT" name="book-type" style="font-weight: normal;">
+                <label for="none-ict" style="font-weight: normal;">None ICT</label>
             </div>
         </div>
-        <div class="form-group">
-            <button type="submit" class="submit" value="submit" name="sub">submit</button>
+        <div class="form-group" style="margin-top:40px;">
+            <button type="submit" class="submit" value="submit" name="sub" style="font-size: 20px;">submit</button>
         </div>
     </form>
-    </form>
+    
 </div>
 
 </body>
