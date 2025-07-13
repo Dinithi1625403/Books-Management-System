@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>users</title>
+    <title>Registered Users</title>
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAE8WYOlUJiV-IIkkRvZ4oTMavzTjUXyiI",
+            authDomain: "bookmangement-dini.firebaseapp.com",
+            projectId: "bookmangement-dini",
+            storageBucket: "bookmangement-dini.appspot.com",
+            messagingSenderId: "1078063163280",
+            appId: "1:1078063163280:web:f03f74390b516af1e33515",
+            measurementId: "G-HHP9Y9BBTP"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadUsers() {
+            const usersTable = document.getElementById('usersTable');
+            const querySnapshot = await getDocs(collection(db, "users"));
+            if (!querySnapshot.empty) {
+                querySnapshot.forEach((doc) => {
+                    const user = doc.data();
+                    const row = usersTable.insertRow(-1);
+                    row.insertCell(0).innerText = doc.id;
+                    row.insertCell(1).innerText = user.username || '';
+                    row.insertCell(2).innerText = user.email || '';
+                });
+            } else {
+                const row = usersTable.insertRow(-1);
+                const cell = row.insertCell(0);
+                cell.colSpan = 3;
+                cell.innerText = "No users found";
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadUsers);
+    </script>
 </head>
 <body>
-    
+    <h2>Registered Users</h2>
+    <table border="1" id="usersTable">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </table>
 </body>
 </html>
