@@ -304,7 +304,7 @@ input[type="number"]
     }
 }
 .users-conatiner {
-    padding: 20px;
+    padding: 10px;
     background-color: #ffffff;
     border-radius: 8px;
     width: 100%;
@@ -315,6 +315,9 @@ input[type="number"]
     align-items: center;
     justify-content: center;
     align-self: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Responsive styles */
