@@ -303,21 +303,23 @@ input[type="number"]
         font-size: 1em;
     }
 }
-.users-conatiner {
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 900px;
-    margin: 40px auto;
+.users-content{
+    
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: center; /* Centers items horizontally */
+     /* Align items to the start vertically, or 'center' if you want vertical centering too */
+    flex-grow: 1; /* Allows this content area to take up available space */
+}
+.users-conatiner {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px;
+    max-width: 900px;
+    border: 10px solid white;
+    margin-top: 20px;
+    height: fit-content;
+   
 }
 
 /* Responsive styles */
