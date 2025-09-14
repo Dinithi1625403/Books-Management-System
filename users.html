@@ -3,9 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        .actions a {
+            display: block;
+            padding: 15px 25px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .actions a:hover {
+            background: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="dashboard">
+        <h1>User Dashboard</h1>
+        <div class="actions">
+            <a href="#">View My Books</a>
+            <a href="#">Borrow New Book</a>
+            <a href="#">Return Book</a>
+            <a href="#">Profile</a>
+        </div>
+        <h2>My Borrowed Books</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Borrowed Date</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sample Book 1</td>
+                    <td>Author A</td>
+                    <td>2024-06-01</td>
+                    <td>2024-06-15</td>
+                    <td>Borrowed</td>
+                </tr>
+                <tr>
+                    <td>Sample Book 2</td>
+                    <td>Author B</td>
+                    <td>2024-05-20</td>
+                    <td>2024-06-03</td>
+                    <td>Returned</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
